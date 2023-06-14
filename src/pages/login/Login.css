@@ -4,7 +4,7 @@
     padding: 20px 20px;
     margin-inline: auto;
     border-radius: 10px;
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 .Login h2 {
@@ -19,6 +19,9 @@
 .Login .container form {
     max-width: 500px;
     margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .Login .container form input {
@@ -39,5 +42,59 @@
 }
 
 .Login .container label {
-    font-weight: 600;
+    word-spacing: 5px;
+}
+
+/* sign up */
+.SignUp {
+    margin-top: 30px;
+}
+.separate {
+    display: flex;
+    height: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: #35795b;
+    margin-block: 30px;
+}
+
+.separate .line {
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #35795cbd;
+}
+
+.loginWithGoogle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #35795b;
+    background-color: white;
+    color: #35795b;
+    word-spacing: 5px;
+    display: flex;
+}
+
+.loginWithGoogle img {
+    margin-right: 50px;
+    width: 10%;
+    padding-left: 10px;
+}
+
+.loginWithGoogle p {
+    width: 90%;
+    margin-bottom: 0px;
+    padding: 10px;
+    right: 40px;
+    letter-spacing: 2px;
+}
+
+.loginWithGoogle:hover {
+    background-color: #caffe8;
+    border-color: transparent;  
+    /* color: white; */
 }
