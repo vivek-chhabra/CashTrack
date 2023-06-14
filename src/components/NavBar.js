@@ -10,8 +10,8 @@ export default function NavBar() {
                     cashTrack
                 </NavLink>
                 <div className="links">
-                    <NavLink to={"/login"} className={'link'}>Login</NavLink>
-                    <NavLink to={"/signup"} className={'link'}>SignUp</NavLink>
+                    <NavLink to={"/login"}  className={'link'}>Login</NavLink>
+                    <NavLink to={"/signup"}  className={'link'}>SignUp</NavLink>
                 </div>
             </nav>
         </div>

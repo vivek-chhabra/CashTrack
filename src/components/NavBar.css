@@ -33,3 +33,12 @@
 .NavBar .link:hover {
     color: rgb(85, 159, 94);
 }
+
+.NavBar .link {
+    padding-bottom: 3px;
+    padding-inline: 5px;
+}
+
+.active {
+    color: rgb(51, 129, 92);
+}
