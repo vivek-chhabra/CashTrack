@@ -1,0 +1,103 @@
+/* transactions */
+
+.Home .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-block: 50px;
+    gap: 30px;
+}
+
+.transactions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.transactions .transaction {
+    min-width: 450px;
+    height: 60px;
+    background-color: white;
+    border-left: 3px solid #24bb77;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    box-shadow: 3px 3px 5px rgb(185, 185, 185), -3px -3px 5px rgba(185, 185, 185, 0.32);
+}
+
+.transaction-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-name {
+    margin-bottom: 0px;
+    font-size: 110%;
+}
+
+.amount {
+    gap: 5px;
+    display: flex;
+    display: flex;
+    gap: 5px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.transaction .fa-xmark {
+    top: 0px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    font-size: 80%;
+    padding-left: 1px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(198, 198, 198);
+}
+
+.transaction .fa-xmark:hover {
+    cursor: pointer;
+}
+
+/* add transation form */
+
+.add-transactions {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-transactions form {
+    padding: 20px 20px;
+    background-color: #449871 ;
+    color: black;
+    border-radius: 5px;
+}
+
+.add-transactions form input {
+    background-color: #c4ffe5;
+    border: none;
+    font-weight: 600;
+}
+
+.add-transactions form button {
+    width: 100%;
+    background-color: #136440;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.btn-primary:active {
+    background-color: #115235 !important;
+    border: 2px solid rgba(255, 255, 255, 0) !important;
+}
+
+.add-transactions form button:hover {
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #136440;
+}
