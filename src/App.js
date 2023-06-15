@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
 import "./App.css";
+import { ErrorMsg } from "./helpers";
 
 function App() {
     return (

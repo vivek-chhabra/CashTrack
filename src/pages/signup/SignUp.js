@@ -5,7 +5,7 @@ import { useSignUpAuth } from "../../hooks/useSignUpAuth";
 import { ErrorMsg } from "../../helpers";
 import { AuthContext } from "../../context/AuthContext";
 import { useToggle } from "../../hooks/useToggle";
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate } from "react-router-dom";
 
 export default function SignUp() {
     // input hook
@@ -34,12 +34,6 @@ export default function SignUp() {
             resetPassword();
         }
     };
-    if (error === null) {
-        resetEmail();
-        resetFName();
-        resetLName();
-        resetPassword();
-    }
 
     return (
         <>
