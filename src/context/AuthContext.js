@@ -8,6 +8,8 @@ const authReducer = (state, action) => {
     switch (action.type) {
         case "ADD_USER_INFO":
             return { ...state, user: action.userInfo };
+        case "LOGOUT":
+            return {...state, user: null}
         default:
             return state;
     }
