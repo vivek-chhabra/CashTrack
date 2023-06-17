@@ -4,6 +4,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/config";
 import { useFirestore } from "../hooks/useFirestore";
 import { ErrorMsg } from "../helpers";
+import { async } from "q";
 
 export default function TransactionForm() {
     // input hook
@@ -17,17 +18,14 @@ export default function TransactionForm() {
     const { addDocument, response } = useFirestore("transactionData");
     const { error, isPending, success, document } = response;
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        addDocument({ transaction: transaction, amount: amount });
-    };
-
-    useEffect(() => {
+        await addDocument({ transaction: transaction, amount: amount });
         if (success) {
             resetAmount();
             resetTransaction();
         }
-    }, [success]);
+    };
 
     return (
         <>
