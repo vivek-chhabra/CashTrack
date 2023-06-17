@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CashTrack/static/css/main.aec623ee.css",
+    "main.js": "/CashTrack/static/js/main.ac2b662e.js",
+    "index.html": "/CashTrack/index.html",
+    "main.aec623ee.css.map": "/CashTrack/static/css/main.aec623ee.css.map",
+    "main.ac2b662e.js.map": "/CashTrack/static/js/main.ac2b662e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aec623ee.css",
+    "static/js/main.ac2b662e.js"
+  ]
+}
