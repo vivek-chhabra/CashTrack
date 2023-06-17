@@ -3,9 +3,10 @@
 .Home .container {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
     margin-block: 50px;
     gap: 30px;
+    width: 100%;
 }
 
 .transactions {
@@ -14,7 +15,7 @@
     gap: 20px;
 }
 
-.transactions .transaction {
+.transactions .Transaction {
     min-width: 450px;
     height: 60px;
     background-color: white;
@@ -24,6 +25,11 @@
     align-items: center;
     padding-inline: 20px;
     box-shadow: 3px 3px 5px rgb(185, 185, 185), -3px -3px 5px rgba(185, 185, 185, 0.32);
+}
+
+.transactions .Transaction:hover {
+    scale: 1.01;
+    box-shadow: 3px 3px 15px rgb(158, 158, 158), -3px -3px 15px rgba(134, 134, 134, 0.32);
 }
 
 .transaction-content {
@@ -48,7 +54,7 @@
     justify-content: center;
 }
 
-.transaction .fa-xmark {
+.Transaction .fa-xmark {
     top: 0px;
     right: 0px;
     width: 20px;
@@ -62,7 +68,7 @@
     background-color: rgb(198, 198, 198);
 }
 
-.transaction .fa-xmark:hover {
+.Transaction .fa-xmark:hover {
     cursor: pointer;
 }
 
@@ -71,6 +77,7 @@
 .add-transactions {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 .add-transactions form {
@@ -93,6 +100,11 @@
 }
 
 .btn-primary:active {
+    background-color: #115235 !important;
+    border: 2px solid rgba(255, 255, 255, 0) !important;
+}
+
+.btn-primary:disabled {
     background-color: #115235 !important;
     border: 2px solid rgba(255, 255, 255, 0) !important;
 }

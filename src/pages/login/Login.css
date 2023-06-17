@@ -45,6 +45,10 @@
     word-spacing: 5px;
 }
 
+[type="password"] {
+    font-weight: 600;
+}
+
 /* sign up */
 .SignUp {
     margin-top: 30px;

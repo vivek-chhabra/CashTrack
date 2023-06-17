@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../login/Login.css";
 import { useInput } from "../../hooks/useInput";
 import { useSignUpAuth } from "../../hooks/useSignUpAuth";
@@ -9,10 +9,10 @@ import { NavLink, Navigate } from "react-router-dom";
 
 export default function SignUp() {
     // input hook
-    const [firstName, updateFirstName, resetFName] = useInput("");
-    const [lastName, updateLastName, resetLName] = useInput("");
-    const [email, updateEmail, resetEmail] = useInput("");
-    const [password, updatePassword, resetPassword] = useInput("");
+    const [firstName, updateFirstName] = useInput("");
+    const [lastName, updateLastName] = useInput("");
+    const [email, updateEmail] = useInput("");
+    const [password, updatePassword] = useInput("");
 
     // toggle hook
     const [isHidden, toggleIsHidden] = useToggle(true);
@@ -27,11 +27,8 @@ export default function SignUp() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signUp();
-        if (error === null) {
-            resetEmail();
-            resetFName();
-            resetLName();
-            resetPassword();
+        {
+            !user && window.location.reload();
         }
     };
 
@@ -43,7 +40,7 @@ export default function SignUp() {
                     <h2>Sign Up</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 name-section">
-                            <label for="firstName" className="form-label">
+                            <label htmlFor="firstName" className="form-label">
                                 Name :
                             </label>
                             <div className="name-input">
@@ -52,20 +49,20 @@ export default function SignUp() {
                             </div>
                         </div>
                         <div className="mb-3">
-                            <label for="email" className="form-label">
+                            <label htmlFor="email" className="form-label">
                                 Email address :
                             </label>
                             <input type="email" placeholder="Your Email" required value={email} onChange={updateEmail} className="shadow-none form-control" id="email" aria-describedby="emailHelp" />
                         </div>
                         <div className="mb-3">
-                            <label for="password" className="form-label">
+                            <label htmlFor="password" className="form-label">
                                 Create Password :
                             </label>
                             <input type={isHidden ? "password" : "text"} placeholder="Make a Strong Password" required value={password} onChange={updatePassword} className="shadow-none form-control" id="password" />
                         </div>
                         <div className="mb-3 form-check">
                             <input type="checkbox" className="form-check-input shadow-none" onClick={toggleIsHidden} id="exampleCheck1" />
-                            <label className="form-check-label" for="exampleCheck1">
+                            <label className="form-check-label" htmlFor="exampleCheck1">
                                 See Password
                             </label>
                         </div>
