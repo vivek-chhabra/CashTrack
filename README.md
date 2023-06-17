@@ -4,6 +4,10 @@
 
 <br>
 
+> [Run This Project](https://vivek-chhabra.github.io/CashTrack/)
+
+<br>
+
 ## 🌟 Features
 
 - User authentication: The application requires users to sign up and log in to access its functionalities. This ensures that each user can only view and manage their own transaction data.
