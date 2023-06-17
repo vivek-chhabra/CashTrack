@@ -13,7 +13,8 @@
 
 input {
   font-family: "Diphylleia", serif;
-  font-weight: 600;
+  font-weight: 600 !important;
+  color: rgb(187, 187, 187);
 }
 
 body {

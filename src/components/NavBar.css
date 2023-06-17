@@ -12,16 +12,22 @@
     font-weight: 600;
 }
 
+.brand:hover {
+    scale: 1.05;
+    rotate: -3deg;
+}
+
 .NavBar .container {
     display: flex;
     justify-content: space-between;
 }
 
-.NavBar .brand, .link {
+.NavBar .brand,
+.link {
     color: black;
     text-decoration: none;
 }
- 
+
 .NavBar .links {
     display: flex;
     gap: 20px;
@@ -41,4 +47,29 @@
 
 .active {
     color: rgb(51, 129, 92);
+}
+
+.sign-out {
+    background-color: transparent !important;
+    color: #215a40 !important;
+    border: 2px solid #215a40;
+    padding-bottom: 7px !important;
+    padding-inline: 15px !important;
+    transition: all ease .4s !important;     
+}
+
+.sign-out:hover {
+    background-color: black !important;
+    color: #b7ffdf !important;
+    border: 2px solid #b7ffdf00;
+    font-weight: 400;
+}
+
+.username {
+    margin-inline: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    word-spacing: 3px;
 }
