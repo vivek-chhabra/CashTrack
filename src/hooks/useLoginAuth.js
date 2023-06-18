@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../context/AuthContext";
 import { signOut, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase/config";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export function useLoginAuth(email, password) {
     const [error, setError] = useState(null);
@@ -18,11 +18,11 @@ export function useLoginAuth(email, password) {
 
         // logging in the user
         try {
-            console.log(isCancelled);
             let res = await signInWithEmailAndPassword(auth, email, password);
 
             // dispatch login action
             dispatch({ type: "LOGIN", payLoad: res.user });
+
             // won't run if the corresponding component gets unmounted
             if (!isCancelled) {
                 setIsPending(false);
@@ -40,9 +40,11 @@ export function useLoginAuth(email, password) {
     const googleLogin = async () => {
         setIsPending(true);
         setError(null);
+        console.log("initial stage");
 
         try {
-            let res = await signInWithPopup(googleProvider);
+            let res = await signInWithPopup(auth, googleProvider);
+            console.log("response", res);
 
             // dispatch login action
             dispatch({ type: "LOGIN", payLoad: res.user });

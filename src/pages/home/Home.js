@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
-import "../home/Home.css";
 import { collection, onSnapshot, addDoc } from "firebase/firestore";
-import { auth, db } from "../../firebase/config";
 import TransactionForm from "../../components/TransactionForm";
-import Transaction from "../../components/Transaction";
 import { useCollection } from "../../hooks/useCollection";
+import Transaction from "../../components/Transaction";
+import React, { useEffect, useState } from "react";
+import { auth, db } from "../../firebase/config";
 import { ErrorMsg } from "../../helpers";
+import "../home/Home.css";
 
 export default function Home() {
     // collection hook
     const { document: transactions, error } = useCollection("transactionData");
+    console.log(transactions);
 
     // collection reff
     const collRef = collection(db, "transactionData");
@@ -18,7 +19,7 @@ export default function Home() {
         <div className="Home">
             {error && <ErrorMsg error={error} />}
             <div className="container">
-                {!error && (
+                {transactions.length != 0 && (
                     <div className="transactions">
                         {transactions.map((transac) => {
                             return <Transaction key={transac.id} transaction={transac.transaction} createdAtDate={transac.createdAtDate} amount={transac.amount} id={transac.id} />;
